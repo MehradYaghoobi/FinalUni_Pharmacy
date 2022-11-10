@@ -63,6 +63,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0_Framework", "0_Framework\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_PharmacyQuery", "01_PharmacyQuery\01_PharmacyQuery.csproj", "{C81437E9-774D-4998-A8B5-A2989C27E2DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Domain", "ShopManagement.Domain\ShopManagement.Domain.csproj", "{9368CA0A-9F28-492D-8E14-F2E19AF86D54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Application", "ShopManagement.Application\ShopManagement.Application.csproj", "{B2C63534-5FED-40DA-8466-20E2CF59B49C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Application.Contracts", "ShopManagement.Application.Contracts\ShopManagement.Application.Contracts.csproj", "{7F215D58-28EF-464A-9F44-8BD5298CDDF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Configuration", "ShopManagement.Configuration\ShopManagement.Configuration.csproj", "{FCDAC261-7F56-4C5F-9EC2-D8A40A2BE694}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Infrastructure.EFCore", "ShopManagement.Infrastructure.EFCore\ShopManagement.Infrastructure.EFCore.csproj", "{9798402E-4EBE-4291-AA38-9654FCD93C09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +91,26 @@ Global
 		{C81437E9-774D-4998-A8B5-A2989C27E2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C81437E9-774D-4998-A8B5-A2989C27E2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C81437E9-774D-4998-A8B5-A2989C27E2DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9368CA0A-9F28-492D-8E14-F2E19AF86D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9368CA0A-9F28-492D-8E14-F2E19AF86D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9368CA0A-9F28-492D-8E14-F2E19AF86D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9368CA0A-9F28-492D-8E14-F2E19AF86D54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C63534-5FED-40DA-8466-20E2CF59B49C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C63534-5FED-40DA-8466-20E2CF59B49C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C63534-5FED-40DA-8466-20E2CF59B49C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C63534-5FED-40DA-8466-20E2CF59B49C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F215D58-28EF-464A-9F44-8BD5298CDDF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F215D58-28EF-464A-9F44-8BD5298CDDF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F215D58-28EF-464A-9F44-8BD5298CDDF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F215D58-28EF-464A-9F44-8BD5298CDDF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCDAC261-7F56-4C5F-9EC2-D8A40A2BE694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCDAC261-7F56-4C5F-9EC2-D8A40A2BE694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCDAC261-7F56-4C5F-9EC2-D8A40A2BE694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCDAC261-7F56-4C5F-9EC2-D8A40A2BE694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9798402E-4EBE-4291-AA38-9654FCD93C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9798402E-4EBE-4291-AA38-9654FCD93C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9798402E-4EBE-4291-AA38-9654FCD93C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9798402E-4EBE-4291-AA38-9654FCD93C09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +137,11 @@ Global
 		{EBADA332-DC13-47B1-890C-0746424DAB02} = {4960B577-4869-482F-890E-F6C9C2B6BF71}
 		{9F3E2B55-A745-48DC-84A0-25DADB326D04} = {4960B577-4869-482F-890E-F6C9C2B6BF71}
 		{EA3AD2CC-8A37-4F6E-863F-74B978032941} = {4960B577-4869-482F-890E-F6C9C2B6BF71}
+		{9368CA0A-9F28-492D-8E14-F2E19AF86D54} = {44802C11-A087-45BC-8E91-89C5C4C56E3A}
+		{B2C63534-5FED-40DA-8466-20E2CF59B49C} = {F495B847-3215-4FFA-9AED-9FCB4B4C6B2B}
+		{7F215D58-28EF-464A-9F44-8BD5298CDDF4} = {F495B847-3215-4FFA-9AED-9FCB4B4C6B2B}
+		{FCDAC261-7F56-4C5F-9EC2-D8A40A2BE694} = {17E427FE-8B6C-42A0-A808-490ADBFA3B24}
+		{9798402E-4EBE-4291-AA38-9654FCD93C09} = {17E427FE-8B6C-42A0-A808-490ADBFA3B24}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58B3181E-9951-4FD8-9407-9C1C77E176B5}
