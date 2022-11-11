@@ -6,7 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ShopManagement.Configuration;
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ServiceHost
 {
@@ -24,12 +27,11 @@ namespace ServiceHost
         {
             services.AddHttpContextAccessor();
             var connectionString = Configuration.GetConnectionString("PharmacyDb");
+
             ShopManagementBootstrapper.Configure(services, connectionString);
 
 
             services.AddTransient<IFileUploader, FileUploader>();
-
-
             services.AddRazorPages();
         }
 

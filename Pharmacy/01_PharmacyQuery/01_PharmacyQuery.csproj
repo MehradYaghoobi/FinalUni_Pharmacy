@@ -5,4 +5,13 @@
     <RootNamespace>_01_PharmacyQuery</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ShopManagement.Infrastructure.EFCore\ShopManagement.Infrastructure.EFCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Contracts\ProductCategory\" />
+    <Folder Include="Query\" />
+  </ItemGroup>
+
 </Project>
