@@ -1,4 +1,5 @@
-﻿using _01_PharmacyQuery.Contracts.Slide;
+﻿using _01_PharmacyQuery.Contracts.ProductCategory;
+using _01_PharmacyQuery.Contracts.Slide;
 using _01_PharmacyQuery.Query;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,6 +36,7 @@ namespace ShopManagement.Configuration
 
 
             services.AddTransient<ISlideQuery, SlideQuery>();
+            services.AddTransient<IProductCategoryQuery, ProductCategoryQuery>();
 
             services.AddDbContext<ShopContext>(x => x.UseSqlServer(connectionString));
         }
