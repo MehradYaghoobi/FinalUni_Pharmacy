@@ -10,6 +10,6 @@ namespace _01_PharmacyQuery.Contracts.ProductCategory
     {
         //ProductCategoryQueryModel GetProductCategoryWithProducstsBy(string slug);
         List<ProductCategoryQueryModel> GetProductCategories();
-        //List<ProductCategoryQueryModel> GetProductCategoriesWithProducts();
+        List<ProductCategoryQueryModel> GetProductCategoriesWithProducts();
     }
 }
