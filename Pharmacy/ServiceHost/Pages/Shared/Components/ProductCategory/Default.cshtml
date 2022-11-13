@@ -6,8 +6,8 @@
             <div class="col-lg-12">
                 <div class="category-wrapper">
                     <div class="row row-10">
-
-                        @foreach (var item in Model)
+                        
+                        @foreach (var item in Model.OrderByDescending(x=>x.Id).Take(3))
                         {
                             <div class="col-lg-4 col-sm-6 grid-item">
                                 <div class="single-category-item">
