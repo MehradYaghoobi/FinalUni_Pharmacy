@@ -1,9 +1,7 @@
-﻿@page "{id}"
-@model ServiceHost.Pages.ProductCategoryModel
+﻿@page
+@model ServiceHost.Pages.SearchModel
 @{
-    ViewData["Title"] = Model.ProductCategory.Name;
-    ViewData["keywords"] = Model.ProductCategory.Keywords;
-    ViewData["metaDescription"] = Model.ProductCategory.MetaDescription;
+    ViewData["Title"] = "نتیجه جستجو";
 }
 
 <div class="breadcrumb-area section-space--half">
@@ -12,19 +10,16 @@
             <div class="col-lg-12">
                 <div class="breadcrumb-wrapper breadcrumb-bg">
                     <div class="breadcrumb-content">
-                        <h1 class="breadcrumb-content__title">@Model.ProductCategory.Name</h1>
-                        <h2>@Model.ProductCategory.Description</h2>
-                        <ul class="breadcrumb-content__page-map">
+                        <h2 class="breadcrumb-content__title">نتیجه جستجو برای: @Model.Value</h2>
+                        @*<ul class="breadcrumb-content__page-map">
                             <li><a asp-page="./Index">صفحه اصلی</a></li>
-                            <li class="active">@Model.ProductCategory.Name</li>
-                        </ul>
+                        </ul>*@
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <div class="page-content-area">
     <div class="container">
         <div class="row">
@@ -32,11 +27,11 @@
                 <div class="page-wrapper">
                     <div class="page-content-wrapper">
                         <div class="row">
-                            <div class="col-lg-12">
+                            @*<div class="col-lg-12">
                                 <div class="shop-header">
                                     <div class="shop-header__left">
                                         <div class="shop-header__left__message">
-                                            نمایش 1 تا 9 از 15 صفحه
+                                            Showing 1 to 9 of 15 (2 Pages)
                                         </div>
                                     </div>
 
@@ -55,18 +50,20 @@
                                         <div class="single-select-block d-inline-block">
                                             <span class="select-title">Sort By:</span>
                                             <select class="pr-0">
-                                                <option value="1">پیش فرض</option>
-                                                <option value="2">حروف (A-Z)</option>
-                                                <option value="3">قیمت (min - max)</option>
+                                                <option value="1">Default</option>
+                                                <option value="2">Name (A-Z)</option>
+                                                <option value="3">Price (min - max)</option>
+                                                <option value="4">Color</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>*@
+
                             <div class="col-lg-12">
                                 <div class="shop-page-content">
                                     <div class="row shop-product-wrap grid three-column">
-                                        @foreach (var product in Model.ProductCategory.Products)
+                                        @foreach (var product in Model.Products)
                                         {
                                             <div class="col-12 col-lg-4 col-md-4 col-sm-6">
                                                 <div class="single-grid-product grid-view-product">
@@ -85,7 +82,7 @@
                                                     <div class="single-grid-product__content">
                                                         <div class="single-grid-product__category-rating">
                                                             <span class="category">
-                                                                <a asp-page="/ProductCategory" asp-route-id="@Model.ProductCategory.Slug">@Model.ProductCategory.Name</a>
+                                                                <a asp-page="/ProductCategory" asp-route-id="@product.CategorySlug">@product.Category</a>
                                                             </span>
                                                             <span class="rating">
                                                                 <i class="ion-android-star active"></i>
@@ -96,9 +93,9 @@
                                                             </span>
                                                         </div>
 
-                                                        <h2 class="single-grid-product__title">
+                                                        <h3 class="single-grid-product__title">
                                                             <a asp-page="/Product" asp-route-id="@product.Slug">@product.Name</a>
-                                                        </h2>
+                                                        </h3>
                                                         <p class="single-grid-product__price">
                                                             @if (product.HasDiscount)
                                                             {
