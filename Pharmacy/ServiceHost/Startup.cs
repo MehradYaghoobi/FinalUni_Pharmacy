@@ -1,4 +1,5 @@
 using _0_Framework.Application;
+using AccountManagement.Configuration;
 using BlogManagement.Infrastructure.Configuration;
 using CommentManagement.Infrastructure.Configuration;
 using DiscountManagement.Configuration;
@@ -13,6 +14,8 @@ using ShopManagement.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 using System.Threading.Tasks;
 
 namespace ServiceHost
@@ -37,9 +40,15 @@ namespace ServiceHost
             InventoryManagementBootstrapper.Configure(services, connectionString);
             BlogManagementBootstrapper.Configure(services, connectionString);
             CommentManagementBootstrapper.Configure(services, connectionString);
+            AccountManagementBootstrapper.Configure(services, connectionString);
 
 
             services.AddTransient<IFileUploader, FileUploader>();
+            services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
+            services.AddSingleton<IPasswordHasher, PasswordHasher>();
+            services.AddTransient<IAuthHelper, AuthHelper>();
+
+
             services.AddRazorPages();
         }
 
