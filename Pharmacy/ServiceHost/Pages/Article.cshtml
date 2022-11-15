@@ -100,9 +100,9 @@
                                     </div>
 
                                     <div class="comment-section">
-                                        <h3 class="comment-counter">نظرات @*(@Model.Article.Comments.Count)*@</h3>
+                                        <h3 class="comment-counter">نظرات (@Model.Article.Comments.Count)</h3>
                                         <div class="comment-container">
-                                            @*@foreach (var comment in Model.Article.Comments)
+                                            @foreach (var comment in Model.Article.Comments)
                                             {
                                                 <div class="single-comment" id="comment-@comment.Id">
                                                     <span class="reply-btn">
@@ -126,7 +126,7 @@
                                                         <p class="comment-text">@comment.Message</p>
                                                     </div>
                                                 </div>
-                                            }*@
+                                            }
                                         </div>
 
                                         <div class="comment-form-container">

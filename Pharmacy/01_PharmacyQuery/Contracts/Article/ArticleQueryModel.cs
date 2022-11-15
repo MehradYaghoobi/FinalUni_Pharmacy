@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _01_PharmacyQuery.Contracts.Comment;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,6 @@ namespace _01_PharmacyQuery.Contracts.Article
         public long CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string CategorySlug { get; set; }
-        //public List<CommentQueryModel> Comments { get; set; }
+        public List<CommentQueryModel> Comments { get; set; }
     }
 }

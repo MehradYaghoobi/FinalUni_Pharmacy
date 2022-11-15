@@ -30,18 +30,18 @@
                                 <li class="menu-item-has-children">
                                     <a>مقالات</a>
                                     <ul class="sub-menu">
-@*                                        @foreach (var category in Model.ArticleCategories)
+                                        @foreach (var category in Model.ArticleCategories)
                                         {
                                             <li>
                                                 <a asp-page="./ArticleCategory" asp-route-id="@category.Slug">@category.Name</a>
                                             </li>
-                                        }*@
+                                        }
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="contact.html">تماس با ما</a>
                                 </li>
-                               @* @if (AuthHelper.IsAuthenticated())
+                                @*@if (AuthHelper.IsAuthenticated())
                                 {
                                     <li>
                                         <a asp-page="/Account" asp-page-handler="Logout">خروج</a>
@@ -102,32 +102,6 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        @*<div class="single-settings-block">
-                                                <h4 class="title">CURRENCY: USD </h4>
-                                                <ul>
-                                                    <li>
-                                                        <a href="javascript:void(0)">€ Euro</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0)">$ US Dollar</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="single-settings-block">
-                                                <h4 class="title">LANGUAGE: EN-GB </h4>
-                                                <ul>
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <img src="~/Theme/assets/img/icons/en-gb.png" alt=""> English
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0)">
-                                                            <img src="~/Theme/assets/img/icons/de-de.png" alt=""> Germany
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>*@
                                     </div>
                                 </div>
                             </li>

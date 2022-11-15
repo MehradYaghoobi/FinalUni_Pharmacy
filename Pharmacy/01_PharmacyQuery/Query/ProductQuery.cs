@@ -1,5 +1,7 @@
 ﻿using _0_Framework.Application;
+using _01_PharmacyQuery.Contracts.Comment;
 using _01_PharmacyQuery.Contracts.Product;
+using CommnetManagement.Infrastructure.EFCore;
 using DiscountManagement.Infrastructure.EFCore;
 using InventoryMangement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
@@ -15,30 +17,18 @@ namespace _01_PharmacyQuery.Query
 {
     public class ProductQuery : IProductQuery
     {
-        //private readonly ShopContext _context;
-        //private readonly InventoryContext _inventoryContext;
-        //private readonly DiscountContext _discountContext;
-        //private readonly CommentContext _commentContext;
-
-        //public ProductQuery(ShopContext context, InventoryContext inventoryContext,
-        //    DiscountContext discountContext, CommentContext commentContext)
-        //{
-        //    _context = context;
-        //    _discountContext = discountContext;
-        //    _inventoryContext = inventoryContext;
-        //    _commentContext = commentContext;
-        //}
-
         private readonly ShopContext _context;
         private readonly InventoryContext _inventoryContext;
         private readonly DiscountContext _discountContext;
+        private readonly CommentContext _commentContext;
 
         public ProductQuery(ShopContext context, InventoryContext inventoryContext,
-            DiscountContext discountContext)
+            DiscountContext discountContext, CommentContext commentContext)
         {
             _context = context;
             _discountContext = discountContext;
             _inventoryContext = inventoryContext;
+            _commentContext = commentContext;
         }
 
         public ProductQueryModel GetProductDetails(string slug)
@@ -92,18 +82,18 @@ namespace _01_PharmacyQuery.Query
                 }
             }
 
-            //product.Comments = _commentContext.Comments
-            //    .Where(x => !x.IsCanceled)
-            //    .Where(x => x.IsConfirmed)
-            //    .Where(x => x.Type == CommentType.Product)
-            //    .Where(x => x.OwnerRecordId == product.Id)
-            //    .Select(x => new CommentQueryModel
-            //    {
-            //        Id = x.Id,
-            //        Message = x.Message,
-            //        Name = x.Name,
-            //        CreationDate = x.CreationDate.ToFarsi()
-            //    }).OrderByDescending(x => x.Id).ToList();
+            product.Comments = _commentContext.Comments
+                .Where(x => !x.IsCanceled)
+                .Where(x => x.IsConfirmed)
+                .Where(x => x.Type == CommentType.Product)
+                .Where(x => x.OwnerRecordId == product.Id)
+                .Select(x => new CommentQueryModel
+                {
+                    Id = x.Id,
+                    Message = x.Message,
+                    Name = x.Name,
+                    CreationDate = x.CreationDate.ToFarsi()
+                }).OrderByDescending(x => x.Id).ToList();
 
             return product;
         }

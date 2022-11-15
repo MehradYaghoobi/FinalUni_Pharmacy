@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _01_PharmacyQuery.Contracts.Comment;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,6 @@ namespace _01_PharmacyQuery.Contracts.Product
         public string MetaDescription { get; set; }
         public bool IsInStock { get; set; }
         public List<ProductPictureQueryModel> Pictures { get; set; }
-        //public List<CommentQueryModel> Comments { get; set; }
+        public List<CommentQueryModel> Comments { get; set; }
     }
 }
