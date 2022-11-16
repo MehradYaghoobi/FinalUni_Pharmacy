@@ -5,7 +5,7 @@ using ShopManagement.Application.Contracts.Product;
 using ShopManagement.Application.Contracts.ProductCategory;
 using System.Collections.Generic;
 using _0_Framework.Infrastructure;
-//using ShopManagement.Configuration.Permissions;
+using ShopManagement.Configuration.Permissions;
 
 namespace ServiceHost.Areas.Administration.Pages.Shop.Products
 {
@@ -26,7 +26,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Products
             _productCategoryApplication = productCategoryApplication;
         }
 
-        //[NeedsPermission(ShopPermissions.ListProducts)]
+        [NeedsPermission(ShopPermissions.ListProducts)]
         public void OnGet(ProductSearchModel searchModel)
         {
             ProductCategories = new SelectList(_productCategoryApplication.GetProductCategories(), "Id", "Name");
@@ -42,7 +42,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Products
             return Partial("./Create", command);
         }
 
-        //[NeedsPermission(ShopPermissions.CreateProduct)]
+        [NeedsPermission(ShopPermissions.CreateProduct)]
         public JsonResult OnPostCreate(CreateProduct command)
         {
             var result = _productApplication.Create(command);
@@ -56,7 +56,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Products
             return Partial("Edit", product);
         }
 
-        //[NeedsPermission(ShopPermissions.EditProduct)]
+        [NeedsPermission(ShopPermissions.EditProduct)]
         public JsonResult OnPostEdit(EditProduct command)
         {
             var result = _productApplication.Edit(command);
