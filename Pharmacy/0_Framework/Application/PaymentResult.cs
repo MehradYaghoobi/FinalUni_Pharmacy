@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _0_Framework.Application.PaymentGateway
+namespace _0_Framework.Application
 {
     public class PaymentResult
     {

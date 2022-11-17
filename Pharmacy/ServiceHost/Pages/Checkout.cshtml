@@ -91,9 +91,15 @@
                                         @foreach (var method in PaymentMethod.GetList())
                                         {
                                             <div class="single-method">
+                                            @if(method.Id == 1)
+                                            {
                                                 <input type="radio" id="payment_@method.Id" name="paymentMethod" value="@method.Id" @(PaymentMethod.GetList().First().Id == method.Id ? "checked" : "")>
+                                            }else
+                                            {
+                                                <input type="radio" id="payment_@method.Id" name="paymentMethod" value="@method.Id" @(PaymentMethod.GetList().First().Id == method.Id ? "checked" : "")>
+                                            }
                                                 <label for="payment_@method.Id">@method.Name</label>
-                                                <p data-method="@method.Id" style="display:@(PaymentMethod.GetList().First().Id == method.Id ? "block" : "none")">@method.Description</p>
+                                                <p data-method="@method.Id" style="display:@(PaymentMethod.GetList().First().Id == method.Id ? "block" : "none")">@method.Description</p>  
                                             </div>
                                         }
                                     </div>

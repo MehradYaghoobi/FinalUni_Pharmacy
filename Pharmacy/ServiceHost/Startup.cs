@@ -1,5 +1,5 @@
 using _0_Framework.Application;
-using _0_Framework.Application.PaymentGateway;
+using _0_Framework.Application.Email;
 using _0_Framework.Infrastructure;
 using AccountManagement.Configuration;
 using BlogManagement.Infrastructure.Configuration;
@@ -52,7 +52,8 @@ namespace ServiceHost
             services.AddTransient<IFileUploader, FileUploader>();
             services.AddSingleton<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IAuthHelper, AuthHelper>();
-            services.AddTransient<IPaymentFactory, PaymentFactory>();
+            services.AddTransient<IEmailService, EmailService>();
+
 
             services.Configure<CookiePolicyOptions>(options =>
             {
