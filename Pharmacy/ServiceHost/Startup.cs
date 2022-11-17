@@ -1,4 +1,5 @@
 using _0_Framework.Application;
+using _0_Framework.Application.PaymentGateway;
 using _0_Framework.Infrastructure;
 using AccountManagement.Configuration;
 using BlogManagement.Infrastructure.Configuration;
@@ -47,11 +48,11 @@ namespace ServiceHost
             CommentManagementBootstrapper.Configure(services, connectionString);
             AccountManagementBootstrapper.Configure(services, connectionString);
 
-
-            services.AddTransient<IFileUploader, FileUploader>();
             services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Arabic));
+            services.AddTransient<IFileUploader, FileUploader>();
             services.AddSingleton<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IAuthHelper, AuthHelper>();
+            services.AddTransient<IPaymentFactory, PaymentFactory>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
