@@ -83,6 +83,10 @@ namespace ServiceHost
 
                 options.AddPolicy("Account",
                     builder => builder.RequireRole(new List<string> { Roles.Administrator }));
+
+                options.AddPolicy("UserArea",
+                    builder => builder.RequireAuthenticatedUser());
+
             });
 
             services.AddCors(options => options.AddPolicy("MyPolicy", builder =>
@@ -101,6 +105,9 @@ namespace ServiceHost
                     options.Conventions.AuthorizeAreaFolder("Administration", "/Shop", "Shop");
                     options.Conventions.AuthorizeAreaFolder("Administration", "/Discounts", "Discount");
                     options.Conventions.AuthorizeAreaFolder("Administration", "/Accounts", "Account");
+
+                    options.Conventions.AuthorizeAreaFolder("Profile", "/", "UserArea");
+
                 })
                 .AddApplicationPart(typeof(ProductController).Assembly)
                 .AddApplicationPart(typeof(InventoryController).Assembly)

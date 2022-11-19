@@ -49,8 +49,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BM.Domain", "BM.Domain", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BM.Infrastructure", "BM.Infrastructure", "{215424DE-838A-4825-BC99-412D6760C6F0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BM.Presentation", "BM.Presentation", "{E9A17718-9C7D-4534-AA73-9019CA8F153D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AM.Application", "AM.Application", "{EBADA332-DC13-47B1-890C-0746424DAB02}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AM.Domain", "AM.Domain", "{9F3E2B55-A745-48DC-84A0-25DADB326D04}"
@@ -123,13 +121,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountManagement.Configura
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountMangement.Infrastructure.EFCore", "AccountMangement.Infrastructure.EFCore\AccountMangement.Infrastructure.EFCore.csproj", "{015CCCCB-81D6-453E-8C28-64939A3F221E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Presentation.Api", "ShopManagement.Presentation.Api\ShopManagement.Presentation.Api.csproj", "{69A1F7FD-563A-44F4-808A-7B8664D01196}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Presentation.Api", "ShopManagement.Presentation.Api\ShopManagement.Presentation.Api.csproj", "{69A1F7FD-563A-44F4-808A-7B8664D01196}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Presentation.Api", "InventoryManagement.Presentation.Api\InventoryManagement.Presentation.Api.csproj", "{5A02924C-6405-4EE1-BCB1-97E1C3722A29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryManagement.Presentation.Api", "InventoryManagement.Presentation.Api\InventoryManagement.Presentation.Api.csproj", "{5A02924C-6405-4EE1-BCB1-97E1C3722A29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Infrastructure.AccountAcl", "ShopManagement.Infrastructure.AccountAcl\ShopManagement.Infrastructure.AccountAcl.csproj", "{B035F709-1BF7-4397-AA1D-719BB90E13FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructure.AccountAcl", "ShopManagement.Infrastructure.AccountAcl\ShopManagement.Infrastructure.AccountAcl.csproj", "{B035F709-1BF7-4397-AA1D-719BB90E13FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Infrastructure.InventoryAcl", "ShopManagement.Infrastructure.InventoryAcl\ShopManagement.Infrastructure.InventoryAcl.csproj", "{EB319AF0-ECDF-473F-9C43-ABD02B71A1C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructure.InventoryAcl", "ShopManagement.Infrastructure.InventoryAcl\ShopManagement.Infrastructure.InventoryAcl.csproj", "{EB319AF0-ECDF-473F-9C43-ABD02B71A1C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -307,7 +305,6 @@ Global
 		{E8B94943-C6BF-4431-A291-F6C55B6CD4BB} = {4BE81BDC-C6D8-452D-A5B5-F8D720EBE652}
 		{83D1DDBC-1D43-41C0-A1E0-54B9FD759C8B} = {4BE81BDC-C6D8-452D-A5B5-F8D720EBE652}
 		{215424DE-838A-4825-BC99-412D6760C6F0} = {4BE81BDC-C6D8-452D-A5B5-F8D720EBE652}
-		{E9A17718-9C7D-4534-AA73-9019CA8F153D} = {4BE81BDC-C6D8-452D-A5B5-F8D720EBE652}
 		{EBADA332-DC13-47B1-890C-0746424DAB02} = {4960B577-4869-482F-890E-F6C9C2B6BF71}
 		{9F3E2B55-A745-48DC-84A0-25DADB326D04} = {4960B577-4869-482F-890E-F6C9C2B6BF71}
 		{EA3AD2CC-8A37-4F6E-863F-74B978032941} = {4960B577-4869-482F-890E-F6C9C2B6BF71}

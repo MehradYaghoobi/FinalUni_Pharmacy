@@ -1,0 +1,85 @@
+﻿@page
+@model ServiceHost.Areas.Profile.Pages.UserAccount.IndexModel
+@{
+}
+@{
+    Layout = "Shared/_UserLayout";
+    ViewData["title"] = "پروفایل";
+}
+<div class="col-md-12">
+    <ul class="nav nav-tabs navtab-bg nav-justified">
+        <li class="active">
+            <a href="#Fullname" data-toggle="tab" aria-expanded="false">
+                <span class="visible-xs"><i class="fa fa-home"></i></span>
+                <span class="hidden-xs">نام</span>
+            </a>
+        </li>
+        <li class="">
+            <a href="#Username" data-toggle="tab" aria-expanded="true">
+                <span class="visible-xs"><i class="fa fa-user"></i></span>
+                <span class="hidden-xs">نام کاربری</span>
+            </a>
+        </li>
+        <li class="">
+            <a href="#Mobile" data-toggle="tab" aria-expanded="false">
+                <span class="visible-xs"><i class="fa fa-envelope-o"></i></span>
+                <span class="hidden-xs">موبایل</span>
+            </a>
+        </li>
+        <li class="">
+            <a href="#Role" data-toggle="tab" aria-expanded="false">
+                <span class="visible-xs"><i class="fa fa-envelope-o"></i></span>
+                <span class="hidden-xs">نقش</span>
+            </a>
+        </li>
+        <li class="">
+            <a href="#Edit" data-toggle="tab" aria-expanded="false">
+                <span class="visible-xs"><i class="fa fa-cog"></i></span>
+                <span class="hidden-xs">عملیات</span>
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        @foreach (var item in Model.Accounts)
+        {
+            @if (item.Id == Model.UserId)
+            {
+                <div class="tab-pane active" id="Fullname">
+                    <p>@item.Fullname</p>
+                </div>
+                <div class="tab-pane " id="Username">
+                    <p>@item.Username</p>
+                </div>
+                <div class="tab-pane" id="Mobile">
+                    <p>@item.Mobile</p>
+                </div>
+                <div class="tab-pane" id="Role">
+                    <p>@item.Role</p>
+                </div>
+                <div class="tab-pane" id="Edit">
+                    <p>
+                        <a class="btn btn-warning waves-effect waves-light m-b-5"
+                   href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
+                            <i class="fa fa-edit"></i> ویرایش
+                        </a>
+                        <a class="btn btn-primary waves-effect waves-light m-b-5"
+                   href="#showmodal=@Url.Page("./Index", "ChangePassword", new { id = item.Id})">
+                            <i class="fa fa-key"></i> تغییر رمز
+                        </a>
+                    </p>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/adminTheme/assets/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/adminTheme/assets/datatables/dataTables.bootstrap.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#datatable').dataTable();
+        });
+    </script>
+}
