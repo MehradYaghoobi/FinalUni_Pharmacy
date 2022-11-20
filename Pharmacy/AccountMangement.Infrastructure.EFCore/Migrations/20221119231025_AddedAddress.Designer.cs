@@ -4,14 +4,16 @@ using AccountMangement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AccountMangement.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(AccountContext))]
-    partial class AccountContextModelSnapshot : ModelSnapshot
+    [Migration("20221119231025_AddedAddress")]
+    partial class AddedAddress
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,10 +31,6 @@ namespace AccountMangement.Infrastructure.EFCore.Migrations
                     b.Property<string>("Address")
                         .HasMaxLength(1500)
                         .HasColumnType("nvarchar(1500)");
-
-                    b.Property<string>("CodePosti")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");

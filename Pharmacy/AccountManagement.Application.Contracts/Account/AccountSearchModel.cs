@@ -12,5 +12,7 @@ namespace AccountManagement.Application.Contracts.Account
         public string Username { get; set; }
         public string Mobile { get; set; }
         public long RoleId { get; set; }
+        public string Address { get; set; }
+        public string CodePosti { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace _01_PharmacyQuery
     {
         public List<ArticleCategoryQueryModel> ArticleCategories { get; set; }
         public List<ProductCategoryQueryModel> ProductCategories { get; set; }
+
         //public List<TitleCategoryQueryModel> TitleCategories { get; set; }
     }
 }

@@ -45,7 +45,7 @@ namespace ServiceHost.Areas.Profile.Pages.UserAccount
 
         public JsonResult OnPostEdit(EditAccount command)
         {
-            var result = _accountApplication.Edit(command);
+            var result = _accountApplication.UserEdit(command);
             return new JsonResult(result);
         }
 

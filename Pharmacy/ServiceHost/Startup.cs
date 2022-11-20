@@ -96,7 +96,6 @@ namespace ServiceHost
                     .AllowAnyMethod()));
 
 
-
             services.AddRazorPages()
                 .AddMvcOptions(options => options.Filters.Add<SecurityPageFilter>())
                 .AddRazorPagesOptions(options =>

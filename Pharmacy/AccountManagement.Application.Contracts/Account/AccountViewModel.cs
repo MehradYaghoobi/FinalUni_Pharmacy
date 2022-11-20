@@ -15,6 +15,8 @@ namespace AccountManagement.Application.Contracts.Account
         public long RoleId { get; set; }
         public string Role { get; set; }
         public string ProfilePhoto { get; set; }
+        public string Address { get; set; }
+        public string CodePosti { get; set; }
         public string CreationDate { get; set; }
     }
 }

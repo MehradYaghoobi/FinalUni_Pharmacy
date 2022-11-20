@@ -65,7 +65,7 @@ namespace AccountManagement.Application
             var path = $"profilePhotos";
             var picturePath = _fileUploader.Upload(command.ProfilePhoto, path);
             var account = new Account(command.Fullname, command.Username, password, command.Mobile, command.RoleId,
-                picturePath);
+                picturePath, command.Address, command.CodePosti);
             _accountRepository.Create(account);
             _accountRepository.SaveChanges();
             return operation.Succedded();
@@ -84,7 +84,7 @@ namespace AccountManagement.Application
 
             var path = $"profilePhotos";
             var picturePath = _fileUploader.Upload(command.ProfilePhoto, path);
-            account.Edit(command.Fullname, command.Username, command.Mobile, command.RoleId, picturePath);
+            account.Edit(command.Fullname, command.Username, command.Mobile, command.RoleId, picturePath, command.Address, command.CodePosti);
             _accountRepository.SaveChanges();
             return operation.Succedded();
         }
@@ -130,6 +130,24 @@ namespace AccountManagement.Application
         public List<AccountViewModel> Search(AccountSearchModel searchModel)
         {
             return _accountRepository.Search(searchModel);
+        }
+
+        public OperationResult UserEdit(EditAccount command)
+        {
+            var operation = new OperationResult();
+            var account = _accountRepository.Get(command.Id);
+            if (account == null)
+                return operation.Failed(ApplicationMessages.RecordNotFound);
+
+            if (_accountRepository.Exists(x =>
+                (x.Username == command.Username || x.Mobile == command.Mobile) && x.Id != command.Id))
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
+
+            var path = $"profilePhotos";
+            var picturePath = _fileUploader.Upload(command.ProfilePhoto, path);
+            account.UserEdit(command.Fullname, command.Username, command.Mobile, picturePath, command.Address, command.CodePosti);
+            _accountRepository.SaveChanges();
+            return operation.Succedded();
         }
     }
 }

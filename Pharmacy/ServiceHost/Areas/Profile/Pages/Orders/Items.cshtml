@@ -12,7 +12,6 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>#</th>
                 <th>محصول</th>
                 <th>تعداد</th>
                 <th>قیمت واحد</th>
@@ -22,7 +21,6 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.Id</td>
                     <td>@item.Product</td>
                     <td>@item.Count</td>
                     <td>@item.UnitPrice.ToMoney()</td>

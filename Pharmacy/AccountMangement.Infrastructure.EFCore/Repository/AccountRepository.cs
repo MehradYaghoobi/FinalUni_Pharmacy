@@ -33,7 +33,9 @@ namespace AccountMangement.Infrastructure.EFCore.Repository
                 Fullname = x.Fullname,
                 Mobile = x.Mobile,
                 RoleId = x.RoleId,
-                Username = x.Username
+                Username = x.Username,
+                Address = x.Address,
+                CodePosti = x.CodePosti,
             }).FirstOrDefault(x => x.Id == id);
         }
 
@@ -57,6 +59,8 @@ namespace AccountMangement.Infrastructure.EFCore.Repository
                 Role = x.Role.Name,
                 RoleId = x.RoleId,
                 Username = x.Username,
+                Address = x.Address,
+                CodePosti = x.CodePosti,
                 CreationDate = x.CreationDate.ToFarsi()
             });
 
